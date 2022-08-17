@@ -19,6 +19,7 @@ public abstract class TypicalCarModel {
 
 
 
+
     public TypicalCarModel(double price, Transmission transmission, String color, int maxSpeed, Electrics electrics,
                            GasTank gasTank, Headlights headlights, Motor motor, Wheel[] wheels) throws StartCarException {
         this.price = price;
@@ -107,5 +108,10 @@ public abstract class TypicalCarModel {
         return headlights;
     }
 
-
+    public  void wheelReplacement(Wheel wheel, Wheel wheel2){
+        if (wheel.getDiameter()==wheel2.getDiameter()){
+            wheel=wheel2;
+            System.out.println("Колесо заменено");
+        }
+    }
 }

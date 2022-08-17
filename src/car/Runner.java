@@ -94,6 +94,10 @@ public class Runner {
             hiance.getHeadlights().headlightsINFO();
             hiance.getHeadlights().headlightsOn();
             hiance.getHeadlights().headlightsINFO();
+            System.out.println(spareWheel);
+            System.out.println(wheelsHiace[1]);
+            hiance.wheelReplacement(wheelsHiace[1], spareWheel);
+            System.out.println(spareWheel);
         } catch (StartCarException e) {
             System.out.println(e.getMsg());
         }
