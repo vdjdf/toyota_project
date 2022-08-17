@@ -15,11 +15,5 @@ public class Hiance extends Truck {
             throws StartCarException {
         super(price, transmission, color, maxSpeed, electrics, gasTank, headlights, motor, wheels, liftingCapacity);
         this.spareWheel = spareWheel;
-        for (Wheel wheel : wheels) {
-            if (!(wheel.getDiameter() == WHEEL_DIAMETR)) {
-                throw new StartCarException("Ошибка: неподходящий деаметр колеса");
-            }
-        }
-
     }
 }

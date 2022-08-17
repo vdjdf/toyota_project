@@ -16,13 +16,7 @@ public class Camry extends PassengerCar {
 
         super(price, transmission, color, maxSpeed, electrics, gasTank, headlights, motor, wheels, cruiseControl);
         this.usb = usb;
-
-            for (Wheel wheel : wheels) {
-                if (!(wheel.getDiameter() == WHEEL_DIAMETR)) {
-                    throw new StartCarException("Ошибка: неподходящий деаметр колеса");
-                }
-            }
-        }
+    }
 
 
     public Usb getUsb() {

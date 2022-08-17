@@ -5,6 +5,7 @@ import car.model.*;
 
 public class Runner {
     public static void main(String[] args) throws StartCarException {
+
         System.out.println("Проверка методов Camry:");
         Wheel wheelCamry1 = new Wheel(17, true);
         Wheel wheelCamry2 = new Wheel(17, true);
@@ -17,30 +18,33 @@ public class Runner {
         Headlights headlightsCamry = new Headlights(true);
         Usb usb = new Usb();
         CruiseControl cruiseControl = new CruiseControl();
-        Camry camry2 = new Camry(10000, Transmission.Mechanics, "Серый", 150, electricsCamry,
+
+
+        Camry camry = new Camry(10000, Transmission.Mechanics, "Серый", 150, electricsCamry,
                 gasTankCamry, headlightsCamry, motorCamry, wheelsCamry, usb, cruiseControl);
 
-
         try {
-            Camry camry = new Camry(10000, Transmission.Mechanics, "Серый", 150, electricsCamry,
-                    gasTankCamry, headlightsCamry, motorCamry, wheelsCamry, usb, cruiseControl);
-
             camry.moveON();
-            camry.moveINFO();
-            camry.moveOFF();
-            camry.moveINFO();
-            camry.getUsb().usbSoundINFO();
-            camry.getUsb().usbSoundON();
-            camry.getUsb().usbSoundINFO();
-            camry.getСruiseControl().cruiseControlINFO();
-            camry.getСruiseControl().cruiseControlON();
-            camry.getСruiseControl().cruiseControlINFO();
-            camry.getHeadlights().headlightsINFO();
-            camry.getHeadlights().headlightsOn();
-            camry.getHeadlights().headlightsINFO();
         } catch (StartCarException e) {
             System.out.println(e.getMsg());
         }
+        camry.moveINFO();
+        camry.moveOFF();
+        camry.moveINFO();
+        camry.getUsb().usbSoundINFO();
+        camry.getUsb().usbSoundON();
+        camry.getUsb().usbSoundINFO();
+        camry.getСruiseControl().cruiseControlINFO();
+        camry.getСruiseControl().cruiseControlON();
+        camry.getСruiseControl().cruiseControlINFO();
+        camry.getHeadlights().headlightsINFO();
+        try {
+            camry.getHeadlights().headlightsOn();
+        } catch (StartCarException e) {
+            System.out.println(e.getMsg());
+        }
+        camry.getHeadlights().headlightsINFO();
+
 
         System.out.println("\nПроверка методов Dyna:");
         Wheel wheelDyna1 = new Wheel(20, true);
@@ -53,22 +57,26 @@ public class Runner {
         GasTank gasTankDyna = new GasTank(70);
         Headlights headlightsDyna = new Headlights(true);
         PowerSocket powerSocket = new PowerSocket();
+
+        Dyna dyna = new Dyna(15000, Transmission.Mechanics, "Зеленый", 90, electricsDyna,
+                gasTankDyna, headlightsDyna, motorDyna, wheelsDyna, 10000, powerSocket);
         try {
-            Dyna dyna = new Dyna(15000, Transmission.Mechanics, "Зеленый", 90, electricsDyna,
-                    gasTankDyna, headlightsDyna, motorDyna, wheelsDyna, 10000, powerSocket);
-
             dyna.moveON();
-            dyna.moveINFO();
-            dyna.moveOFF();
-            dyna.moveINFO();
-            dyna.getHeadlights().headlightsINFO();
-            dyna.getHeadlights().headlightsOn();
-            dyna.getHeadlights().headlightsINFO();
-            dyna.getPowerSocket().powerPhone();
-
         } catch (StartCarException e) {
             System.out.println(e.getMsg());
         }
+        dyna.moveINFO();
+        dyna.moveOFF();
+        dyna.moveINFO();
+        dyna.getHeadlights().headlightsINFO();
+        try {
+            dyna.getHeadlights().headlightsOn();
+        } catch (StartCarException e) {
+            System.out.println(e.getMsg());
+        }
+        dyna.getHeadlights().headlightsINFO();
+        dyna.getPowerSocket().powerPhone();
+
 
         System.out.println("\nПроверка методов Hiace:");
         Wheel wheelHiace1 = new Wheel(20, true);
@@ -81,55 +89,62 @@ public class Runner {
         Electrics electricsHiace = new Electrics(true);
         GasTank gasTankHiace = new GasTank(60);
         Headlights headlightsHiace = new Headlights(true);
+
+        Hiance hiance = new Hiance(20000, Transmission.Automatic, "Розовый", 140, electricsHiace,
+                gasTankHiace, headlightsHiace, motorHiace, wheelsHiace, 500, spareWheel);
         try {
-            Hiance hiance = new Hiance(20000, Transmission.Automatic, "Розовый", 140, electricsHiace,
-                    gasTankHiace, headlightsHiace, motorHiace, wheelsHiace, 500, spareWheel);
             hiance.moveON();
-            hiance.moveINFO();
-            hiance.moveOFF();
-            hiance.moveINFO();
-            hiance.getHeadlights().headlightsINFO();
-            hiance.getHeadlights().headlightsOn();
-            hiance.getHeadlights().headlightsINFO();
-            System.out.println(spareWheel);
-            System.out.println(wheelsHiace[1]);
-            hiance.wheelReplacement(wheelsHiace[1], spareWheel);
-            System.out.println(spareWheel);
         } catch (StartCarException e) {
             System.out.println(e.getMsg());
         }
+        hiance.moveINFO();
+        hiance.moveOFF();
+        hiance.moveINFO();
+        hiance.getHeadlights().headlightsINFO();
+        try {
+            hiance.getHeadlights().headlightsOn();
+        } catch (StartCarException e) {
+            System.out.println(e.getMsg());
+        }
+        hiance.getHeadlights().headlightsINFO();
+        System.out.println(spareWheel);
+        System.out.println(wheelsHiace[1]);
+        hiance.wheelReplacement(wheelsHiace[1], spareWheel);
+        System.out.println(spareWheel);
+
 
         System.out.println("\nПроверка методов Solara:");
         Wheel wheelSolara1 = new Wheel(16, true);
         Wheel wheelSolara2 = new Wheel(16, true);
         Wheel wheelSolara3 = new Wheel(16, true);
         Wheel wheelSolara4 = new Wheel(16, true);
-        Wheel spareSolara = new Wheel(16, true);
         Wheel[] wheelsSolara = {wheelSolara1, wheelSolara2, wheelSolara3, wheelSolara4};
         Motor motorSolara = new Motor(true);
         Electrics electricsSolara = new Electrics(true);
         GasTank gasTankSolara = new GasTank(55);
         Headlights headlightsSolara = new Headlights(true);
-        ConvertibleRoof convertibleRoofSolara = new ConvertibleRoof(true);
+        ConvertibleRoof convertibleRoofSolara = new ConvertibleRoof(false);
         MiniFridge miniFridgeSolara = new MiniFridge();
 
+        Solara solara = new Solara(25000, Transmission.Robot, "Красный", 200, electricsSolara,
+                gasTankSolara, headlightsSolara, motorSolara, wheelsSolara, convertibleRoofSolara, miniFridgeSolara);
         try {
-            Solara solara = new Solara(25000, Transmission.Robot, "Красный", 200, electricsSolara,
-                    gasTankSolara, headlightsSolara, motorSolara, wheelsSolara, convertibleRoofSolara, miniFridgeSolara);
             solara.moveON();
-            solara.moveINFO();
-            solara.moveOFF();
-            solara.moveINFO();
-            solara.getHeadlights().headlightsINFO();
-            solara.getHeadlights().headlightsOn();
-            solara.getHeadlights().headlightsINFO();
-
-            solara.getConvertibleRoof().convertibleRoofOpenINFO();
-            solara.getConvertibleRoof().convertibleRoofOpenINFO();
-            solara.getMiniFridge().coolDrink();
+        } catch (StartCarException e) {
+            System.out.println(e.getMsg());
+        }
+        solara.moveINFO();
+        solara.moveOFF();
+        solara.moveINFO();
+        solara.getHeadlights().headlightsINFO();
+        solara.getHeadlights().headlightsINFO();
+        solara.getConvertibleRoof().convertibleRoofOpenINFO();
+        try {
             solara.getConvertibleRoof().convertibleRoofOpenON();
         } catch (StartCarException e) {
             System.out.println(e.getMsg());
         }
+        solara.getConvertibleRoof().convertibleRoofOpenINFO();
+        solara.getMiniFridge().coolDrink();
     }
 }
