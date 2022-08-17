@@ -17,6 +17,9 @@ public class Runner {
         Headlights headlightsCamry = new Headlights(true);
         Usb usb = new Usb();
         CruiseControl cruiseControl = new CruiseControl();
+        Camry camry2 = new Camry(10000, Transmission.Mechanics, "Серый", 150, electricsCamry,
+                gasTankCamry, headlightsCamry, motorCamry, wheelsCamry, usb, cruiseControl);
+
 
         try {
             Camry camry = new Camry(10000, Transmission.Mechanics, "Серый", 150, electricsCamry,
@@ -38,12 +41,6 @@ public class Runner {
         } catch (StartCarException e) {
             System.out.println(e.getMsg());
         }
-
-//        try {
-//           ТУТ БЫЛ МЕТОТ ВЫЗОВА ФАР ON
-//        } catch (StartCarException e) {
-//            System.out.println(e.getMsg());
-//        }
 
         System.out.println("\nПроверка методов Dyna:");
         Wheel wheelDyna1 = new Wheel(20, true);
@@ -102,7 +99,6 @@ public class Runner {
             System.out.println(e.getMsg());
         }
 
-
         System.out.println("\nПроверка методов Solara:");
         Wheel wheelSolara1 = new Wheel(16, true);
         Wheel wheelSolara2 = new Wheel(16, true);
@@ -135,8 +131,5 @@ public class Runner {
         } catch (StartCarException e) {
             System.out.println(e.getMsg());
         }
-
-
     }
-
 }
