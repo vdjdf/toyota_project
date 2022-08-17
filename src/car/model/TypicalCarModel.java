@@ -3,6 +3,8 @@ package car.model;
 import car.StartCarException;
 import car.component.*;
 
+import static car.component.Wheel.chekWheels;
+
 public abstract class TypicalCarModel {
     private double price;
     private String color;
@@ -14,6 +16,7 @@ public abstract class TypicalCarModel {
     private Headlights headlights;
     private Motor motor;
     private Wheel[] wheels;
+
 
 
     public TypicalCarModel(double price, Transmission transmission, String color, int maxSpeed, Electrics electrics,
@@ -37,9 +40,6 @@ public abstract class TypicalCarModel {
 
     }
 
-    public Wheel[] getWheel() {
-        return wheels;
-    }
 
     public Transmission getTransmission() {
         return transmission;
@@ -51,19 +51,6 @@ public abstract class TypicalCarModel {
 
     public void setMove(boolean move) {
         this.move = move;
-    }
-
-    public boolean chekWheels() throws StartCarException {
-        if (wheels.length < 4) {
-            throw new StartCarException("Недостаточно колес");
-
-        }
-        for (Wheel wheel : wheels) {
-            if (!wheel.isWorkable()) {
-                throw new StartCarException("Колесо пробито");
-            }
-        }
-        return true;
     }
 
     public boolean chekMotor() throws StartCarException {
@@ -89,10 +76,11 @@ public abstract class TypicalCarModel {
     }
 
     public boolean chekCar() throws StartCarException {
-        if (!chekWheels()) return false;
+        if (!chekWheels(wheels)) return false;
         if (!chekMotor()) return false;
         if (!chekLiterGasoline()) return false;
         if (!chekElectrics()) return false;
+
 
         return true;
     }
@@ -101,7 +89,6 @@ public abstract class TypicalCarModel {
         if (chekCar()) {
             setMove(true);
         }
-
     }
 
     public void moveOFF() {
@@ -119,4 +106,6 @@ public abstract class TypicalCarModel {
     public Headlights getHeadlights() {
         return headlights;
     }
+
+
 }

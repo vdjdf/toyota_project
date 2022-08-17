@@ -1,5 +1,7 @@
 package car.component;
 
+import car.StartCarException;
+
 public class Wheel {
     private int diameter;
     private boolean workable;
@@ -13,7 +15,25 @@ public class Wheel {
         return diameter;
     }
 
-    public boolean isWorkable() {
+    public  boolean isWorkable() {
         return workable;
     }
+    public static boolean chekWheels(Wheel[] wheels) throws StartCarException  {
+        if (wheels.length < 4) {
+            throw new StartCarException("Недостаточно колес");
+
+        }
+        for (Wheel wheel : wheels) {
+            if (!wheel.isWorkable()) {
+                throw new StartCarException("Колесо пробито");
+            }
+        }
+        return true;
+    }
+
+
+
+
+
+
 }

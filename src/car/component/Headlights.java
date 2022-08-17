@@ -42,7 +42,7 @@ public class Headlights {
         if (isHeadlightsOnn()) {
             System.out.println("Фары включены");
         } else {
-            System.out.println("Фары выкллючены");
+            System.out.println("Фары выключены");
         }
     }
     public boolean chekHeadlights() throws StartCarException {
