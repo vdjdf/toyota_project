@@ -1,14 +1,14 @@
 package car.component;
 
-public class Usb {
+public class Usb extends Detal {
     private boolean usb = false;
-    public void usbSoundON(){
+    public void usbSoundOn(){
         setUsb(true);
     }
-    public void usbSoundOFF(){
+    public void usbSoundOff(){
         setUsb(false);
     }
-    public void usbSoundINFO(){
+    public void usbSoundInfo(){
         if(isUsb()){
             System.out.println("Музыка включена");
         }else {
@@ -25,3 +25,4 @@ public class Usb {
         this.usb = usb;
     }
 }
+

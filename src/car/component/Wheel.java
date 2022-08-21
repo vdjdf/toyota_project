@@ -2,22 +2,22 @@ package car.component;
 
 import car.StartCarException;
 
-public class Wheel {
-    private int diameter;
-    private boolean workable;
+public class Wheel extends DetalWorkable {
+ private WheelRadius wheelRadius;
 
-    public Wheel(int diameter, boolean workable) {
-        this.diameter = diameter;
-        this.workable = workable;
+    public Wheel(WheelRadius wheelRadius) {
+    super(true);
+    this.wheelRadius = wheelRadius;
     }
 
-    public int getDiameter() {
-        return diameter;
+    public WheelRadius getWheelRadius() {
+        return wheelRadius;
     }
 
-    public  boolean isWorkable() {
-        return workable;
+    public void setWheelRadius(WheelRadius wheelRadius) {
+        this.wheelRadius = wheelRadius;
     }
+
     public static boolean chekWheels(Wheel[] wheels) throws StartCarException  {
         if (wheels.length < 4) {
             throw new StartCarException("Недостаточно колес");
@@ -29,6 +29,7 @@ public class Wheel {
             }
         }
         return true;
+
     }
 
 }

@@ -2,20 +2,14 @@ package car.component;
 
 import car.StartCarException;
 
-public class ConvertibleRoof {
-    private boolean workable;
+public class ConvertibleRoof extends DetalWorkable {
     private boolean convertibleRoofOpen = false;
 
-    public ConvertibleRoof(boolean workable) {
-        this.workable = workable;
+    public ConvertibleRoof() {
+        super(true);
     }
-
-    public boolean isWorkable() {
-        return workable;
-    }
-
-    public void setWorkable(boolean workable) {
-        this.workable = workable;
+    public boolean convertibleRoofOpen() {
+        return convertibleRoofOpen;
     }
 
     public boolean isConvertibleRoofOpen() {
@@ -28,15 +22,18 @@ public class ConvertibleRoof {
 
 
     public void convertibleRoofOpenON() throws StartCarException {
-        if (chekConvertibleRoof()){
+        if (checkConvertibleRoof()) {
             setConvertibleRoofOpen(true);
         }
     }
 
     public void convertibleRoofOpenOFF() throws StartCarException {
-        if (chekConvertibleRoof()){
-        setConvertibleRoofOpen(false);}
+        if (checkConvertibleRoof()) {
+            setConvertibleRoofOpen(false);
+        }
     }
+
+
 
     public void convertibleRoofOpenINFO() {
         if (isConvertibleRoofOpen()) {
@@ -46,7 +43,7 @@ public class ConvertibleRoof {
         }
     }
 
-    public boolean chekConvertibleRoof() throws StartCarException {
+    public boolean checkConvertibleRoof() throws StartCarException {
         if (!isWorkable()) {
             throw new StartCarException("Откидная крыша сломана");
         }

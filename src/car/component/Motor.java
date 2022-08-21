@@ -1,13 +1,8 @@
 package car.component;
 
-public class Motor {
-    private boolean workable;
+public class Motor extends DetalWorkable {
 
-    public Motor(boolean workable) {
-        this.workable = workable;
-    }
-
-    public boolean isWorkable() {
-        return workable;
+    public Motor() {
+        super(true);
     }
 }

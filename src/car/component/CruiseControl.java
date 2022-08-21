@@ -1,18 +1,18 @@
 package car.component;
 
-public class CruiseControl {
+public class CruiseControl extends Detal {
     private boolean cruiseCont = false;
 
 
-    public void cruiseControlON() {
+    public void cruiseControlOn() {
         setCruiseCont(true);
     }
 
-    public void cruiseControlOFF() {
+    public void cruiseControlOff() {
         setCruiseCont(false);
     }
 
-    public void cruiseControlINFO() {
+    public void cruiseControlInfo() {
         if (this.cruiseCont) {
             System.out.println("Круиз-контроль включен");
         } else {

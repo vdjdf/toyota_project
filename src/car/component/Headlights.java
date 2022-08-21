@@ -3,21 +3,11 @@ package car.component;
 import car.StartCarException;
 
 //Фары
-public class Headlights {
-    private boolean workable;
+public class Headlights extends DetalWorkable {
     private boolean headlightsWork = false;
 
-
-    public Headlights(boolean workable) {
-        this.workable = workable;
-    }
-
-    public boolean isWorkable() {
-        return workable;
-    }
-
-    public void setWorkable(boolean workable) {
-        this.workable = workable;
+    public Headlights() {
+        super(true);
     }
 
     public boolean isHeadlightsOnn() {
@@ -29,22 +19,23 @@ public class Headlights {
     }
 
     public void headlightsOn() throws StartCarException {
-        if (chekHeadlights()){
+        if (chekHeadlights()) {
             setHeadlightsOnn(true);
         }
     }
 
-    public void headlightsOFF() throws StartCarException {
+    public void headlightsOff() throws StartCarException {
         setHeadlightsOnn(false);
     }
 
-    public void headlightsINFO() {
+    public void headlightsInfo() {
         if (isHeadlightsOnn()) {
             System.out.println("Фары включены");
         } else {
             System.out.println("Фары выключены");
         }
     }
+
     public boolean chekHeadlights() throws StartCarException {
         if (!isWorkable()) {
             throw new StartCarException("Фары сломаны");

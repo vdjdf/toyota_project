@@ -1,6 +1,6 @@
 package car.component;
 
-public class GasTank {
+public class GasTank extends Detal {
     int literGasoline;
 
     public GasTank(int literGasoline) {

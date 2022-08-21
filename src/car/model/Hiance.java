@@ -7,13 +7,12 @@ import car.component.*;
 //(грузовой фургон)
 public class Hiance extends Truck {
     private Wheel spareWheel;
-    private static final int WHEEL_DIAMETR = 20;
-
 
     public Hiance(double price, Transmission transmission, String color, int maxSpeed, Electrics electrics, GasTank gasTank,
-                  Headlights headlights, Motor motor, Wheel[] wheels, int liftingCapacity, Wheel spareWheel)
-            throws StartCarException {
-        super(price, transmission, color, maxSpeed, electrics, gasTank, headlights, motor, wheels, liftingCapacity);
+                  Headlights headlights, Motor motor, Wheel[] wheels, int liftingCapacity, Wheel spareWheel,
+                  WheelRadius wheelRadius) throws StartCarException {
+        super(price, transmission, color, maxSpeed, electrics, gasTank, headlights, motor,
+                wheels, liftingCapacity,wheelRadius);
         this.spareWheel = spareWheel;
     }
 }

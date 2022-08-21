@@ -1,11 +1,12 @@
-package car.model;
+package car.classCar;
 
 import car.StartCarException;
 import car.component.*;
+import car.component.Transmission;
 
 import static car.component.Wheel.chekWheels;
 
-public abstract class TypicalCarModel {
+public abstract class Car {
     private double price;
     private String color;
     private int maxSpeed;
@@ -16,19 +17,12 @@ public abstract class TypicalCarModel {
     private Headlights headlights;
     private Motor motor;
     private Wheel[] wheels;
+    private WheelRadius wheelRadius;
 
 
-
-
-    public TypicalCarModel(double price, Transmission transmission, String color, int maxSpeed, Electrics electrics,
-                           GasTank gasTank, Headlights headlights, Motor motor, Wheel[] wheels) throws StartCarException {
+    public Car(double price, Transmission transmission, String color, int maxSpeed, Electrics electrics,
+               GasTank gasTank, Headlights headlights, Motor motor, Wheel[] wheels, WheelRadius wheelRadius)  {
         this.price = price;
-        switch (transmission) {
-            case Robot:
-            case Automatic:
-            case Mechanics:
-                break;
-        }
         this.color = color;
         this.maxSpeed = maxSpeed;
         this.transmission = transmission;
@@ -36,9 +30,13 @@ public abstract class TypicalCarModel {
         this.gasTank = gasTank;
         this.headlights = headlights;
         this.motor = motor;
-        //  wheels = new Wheel[4];
         this.wheels = wheels;
-
+        this.wheelRadius = wheelRadius;
+        for (Wheel wheel : wheels) {
+            if (wheel.getWheelRadius() != wheelRadius) {
+                throw new RuntimeException("Радиус передаваемых колес должен быть " + wheel.getWheelRadius());
+            }
+        }
     }
 
 
@@ -54,49 +52,48 @@ public abstract class TypicalCarModel {
         this.move = move;
     }
 
-    public boolean chekMotor() throws StartCarException {
+    public boolean checkMotor() throws StartCarException {
         if (!motor.isWorkable()) {
             throw new StartCarException("Мотор сломан");
         }
         return true;
-
     }
 
-    public boolean chekLiterGasoline() throws StartCarException {
+    public boolean checkLiterGasoline() throws StartCarException {
         if (gasTank.getLiterGasoline() <= 0) {
             throw new StartCarException("Бензобак пуст");
         }
         return true;
     }
 
-    public boolean chekElectrics() throws StartCarException {
+    public boolean checkElectrics() throws StartCarException {
         if (!electrics.isWorkable()) {
             throw new StartCarException("Электрика сломана");
         }
         return true;
     }
 
-    public boolean chekCar() throws StartCarException {
+    public boolean checkCar() throws StartCarException {
         if (!chekWheels(wheels)) return false;
-        if (!chekMotor()) return false;
-        if (!chekLiterGasoline()) return false;
-        if (!chekElectrics()) return false;
+        if (!checkMotor()) return false;
+        if (!checkLiterGasoline()) return false;
+        if (!checkElectrics()) return false;
 
 
         return true;
     }
 
-    public void moveON() throws StartCarException {
-        if (chekCar()) {
+    public void moveOn() throws StartCarException {
+        if (checkCar()) {
             setMove(true);
         }
     }
 
-    public void moveOFF() {
+    public void moveOff() {
         setMove(false);
     }
 
-    public void moveINFO() {
+    public void moveInfo() {
         if (isMove()) {
             System.out.println("Машина едет");
         } else {
@@ -108,10 +105,10 @@ public abstract class TypicalCarModel {
         return headlights;
     }
 
-    public  void wheelReplacement(Wheel wheel, Wheel wheel2){
-        if (wheel.getDiameter()==wheel2.getDiameter()){
-            wheel=wheel2;
-            System.out.println("Колесо заменено");
+    public void switchWheel(int index, Wheel wheel) {
+                if (wheel.getWheelRadius() == wheelRadius) {
+            wheels[index] = wheel;
         }
     }
+
 }
