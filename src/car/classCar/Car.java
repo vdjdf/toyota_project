@@ -110,5 +110,8 @@ public abstract class Car {
             wheels[index] = wheel;
         }
     }
+    public void setGasTank(int gasTliterGasolineank){
+        gasTank.setLiterGasoline(gasTliterGasolineank);
+    }
 
 }

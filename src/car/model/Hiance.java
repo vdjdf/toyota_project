@@ -10,7 +10,7 @@ public class Hiance extends Truck {
 
     public Hiance(double price, Transmission transmission, String color, int maxSpeed, Electrics electrics, GasTank gasTank,
                   Headlights headlights, Motor motor, Wheel[] wheels, int liftingCapacity, Wheel spareWheel,
-                  WheelRadius wheelRadius) throws StartCarException {
+                  WheelRadius wheelRadius) {
         super(price, transmission, color, maxSpeed, electrics, gasTank, headlights, motor,
                 wheels, liftingCapacity,wheelRadius);
         this.spareWheel = spareWheel;

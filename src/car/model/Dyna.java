@@ -10,7 +10,7 @@ public class Dyna extends Truck {
 
     public Dyna(double price, Transmission transmission, String color, int maxSpeed, Electrics electrics, GasTank gasTank,
                 Headlights headlights, Motor motor, Wheel[] wheels, int liftingCapacity, PowerSocket powerSocket,
-                WheelRadius wheelRadius) throws StartCarException {
+                WheelRadius wheelRadius) {
         super(price, transmission, color, maxSpeed, electrics, gasTank, headlights, motor, wheels,
                 liftingCapacity, wheelRadius);
         this.powerSocket = powerSocket;
