@@ -18,13 +18,14 @@ public class FactoryCar {
     public FactoryCar(CountryList countryList, FactoryComponent factoryComponent) {
         this.factoryComponent = factoryComponent;
         this.countryList = countryList;
-    }
-
-    public Camry madeCamry(int price, String color) {
         if (!(countryList == factoryComponent.getCountryList())) {
             throw new RuntimeException("Страны не совпадают:" + " Страна производства деталей: " +
                     factoryComponent.getCountryList() + " Страна производства машин: " + countryList);
         }
+    }
+
+    public Camry madeCamry(int price, String color) {
+
         return new Camry(price, Transmission.ROBOT, color, 220, factoryComponent.madeElectrics(),
                 factoryComponent.madeGasTank(), factoryComponent.madeHeadlights(), factoryComponent.madeMotor(),
                 factoryComponent.madeWheels(WheelRadius.R17), factoryComponent.madeUsb(),
@@ -33,10 +34,7 @@ public class FactoryCar {
 
 
     public Dyna madeDyna(int price, String color) {
-        if (!(countryList == factoryComponent.getCountryList())) {
-            throw new RuntimeException("Страны не совпадают:" + " Страна производства деталей: " +
-                    factoryComponent.getCountryList() + " Страна производства машин: " + countryList);
-        }
+
         return new Dyna(price, Transmission.MECHANICS, color, 200, factoryComponent.madeElectrics(),
                 factoryComponent.madeGasTank(), factoryComponent.madeHeadlights(), factoryComponent.madeMotor(),
                 factoryComponent.madeWheels(WheelRadius.R20), 200, factoryComponent.madePowerSocket(),
@@ -44,10 +42,7 @@ public class FactoryCar {
     }
 
     public Hiance madeHiance(int price, String color) {
-        if (!(countryList == factoryComponent.getCountryList())) {
-            throw new RuntimeException("Страны не совпадают:" + " Страна производства деталей: " +
-                    factoryComponent.getCountryList() + " Страна производства машин: " + countryList);
-        }
+
         return new Hiance(price, Transmission.MECHANICS, color, 200, factoryComponent.madeElectrics(),
                 factoryComponent.madeGasTank(), factoryComponent.madeHeadlights(), factoryComponent.madeMotor(),
                 factoryComponent.madeWheels(WheelRadius.R20), 200, factoryComponent.madeSpareWheel(),
@@ -55,10 +50,7 @@ public class FactoryCar {
     }
 
     public Solara madeSolara(int price, String color) {
-        if (!(countryList == factoryComponent.getCountryList())) {
-            throw new RuntimeException("Страны не совпадают:" + " Страна производства деталей: " +
-                    factoryComponent.getCountryList() + " Страна производства машин: " + countryList);
-        }
+
         return new Solara(price, Transmission.ROBOT, color, 220, factoryComponent.madeElectrics(),
                 factoryComponent.madeGasTank(), factoryComponent.madeHeadlights(), factoryComponent.madeMotor(),
                 factoryComponent.madeWheels(WheelRadius.R16), factoryComponent.madeConvertibleRoof(),

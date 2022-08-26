@@ -12,8 +12,8 @@ import car.model.Solara;
 
 public class Test {
     public static void main(String[] args)  {
-        FactoryComponent factoryComponent = new FactoryComponent(CountryList.TURKEY);
-        FactoryComponent factoryComponent2 = new FactoryComponent(CountryList.RUSSIA);
+        FactoryComponent factoryComponent = new FactoryComponent(CountryList.RUSSIA);
+        FactoryComponent factoryComponent2 = new FactoryComponent(CountryList.TURKEY);
         FactoryCar factoryCar = new FactoryCar(CountryList.RUSSIA, factoryComponent);
         Camry camry = factoryCar.madeCamry(200, "Красный");
         Dyna dyna = factoryCar.madeDyna(300, "Синий");
