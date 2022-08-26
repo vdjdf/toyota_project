@@ -12,7 +12,7 @@ public class FactoryComponent {
     private MiniFridge miniFridge;
     private Motor motor;
     private PowerSocket powerSocket;
-    private Transmission transmission;
+  //private Transmission transmission;
     private Usb usb;
     private Wheel wheel;
     private Wheel[] wheels;
@@ -68,7 +68,6 @@ public class FactoryComponent {
             wheels[i] = new Wheel(WheelRadius);
         }
         return wheels;
-
     }
 
     public CountryList getCountryList() {

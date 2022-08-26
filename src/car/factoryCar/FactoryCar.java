@@ -20,7 +20,6 @@ public class FactoryCar {
         this.countryList = countryList;
     }
 
-
     public Camry madeCamry(int price, String color) {
         if (!(countryList == factoryComponent.getCountryList())) {
             throw new RuntimeException("Страны не совпадают:" + " Страна производства деталей: " +
@@ -31,6 +30,7 @@ public class FactoryCar {
                 factoryComponent.madeWheels(WheelRadius.R17), factoryComponent.madeUsb(),
                 factoryComponent.madeCruiseControl(), WheelRadius.R17);
     }
+
 
     public Dyna madeDyna(int price, String color) {
         if (!(countryList == factoryComponent.getCountryList())) {

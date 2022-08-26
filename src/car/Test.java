@@ -11,8 +11,8 @@ import car.model.Hiance;
 import car.model.Solara;
 
 public class Test {
-    public static void main(String[] args) throws StartCarException, CountyFactoryNotEqualException {
-        FactoryComponent factoryComponent = new FactoryComponent(CountryList.RUSSIA);
+    public static void main(String[] args)  {
+        FactoryComponent factoryComponent = new FactoryComponent(CountryList.TURKEY);
         FactoryComponent factoryComponent2 = new FactoryComponent(CountryList.RUSSIA);
         FactoryCar factoryCar = new FactoryCar(CountryList.RUSSIA, factoryComponent);
         Camry camry = factoryCar.madeCamry(200, "Красный");
@@ -27,6 +27,7 @@ public class Test {
         //заправка только двух машин и тест движения
         camry.setGasTank(50);
         dyna.setGasTank(40);
+
         try {
             camry.moveOn();
         } catch (StartCarException e) {
