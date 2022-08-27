@@ -21,7 +21,7 @@ public abstract class Car {
 
 
     public Car(double price, Transmission transmission, String color, int maxSpeed, Electrics electrics,
-               GasTank gasTank, Headlights headlights, Motor motor, Wheel[] wheels, WheelRadius wheelRadius)  {
+               GasTank gasTank, Headlights headlights, Motor motor, Wheel[] wheels, WheelRadius wheelRadius) {
         this.price = price;
         this.color = color;
         this.maxSpeed = maxSpeed;
@@ -106,12 +106,17 @@ public abstract class Car {
     }
 
     public void switchWheel(int index, Wheel wheel) {
-                if (wheel.getWheelRadius() == wheelRadius) {
+        if (wheel.getWheelRadius() == wheelRadius) {
             wheels[index] = wheel;
         }
     }
-    public void refill(int volume){
-        gasTank.setLiterGasoline(gasTank.getLiterGasoline()+volume) ;
+
+    public void refill(int volume) {
+        gasTank.setLiterGasoline(gasTank.getLiterGasoline() + volume);
+    }
+
+    public void infoGasTank() {
+        System.out.println("Бензина в баке: " + gasTank.getLiterGasoline());
     }
 
 }
