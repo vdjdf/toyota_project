@@ -12,7 +12,8 @@ import car.model.Solara;
 
 public class Test {
     public static void main(String[] args)  {
-        FactoryComponent factoryComponent = new FactoryComponent(CountryList.RUSSIA);
+       try {
+        FactoryComponent factoryComponent = new FactoryComponent(CountryList.TURKEY);
         FactoryComponent factoryComponent2 = new FactoryComponent(CountryList.TURKEY);
         FactoryCar factoryCar = new FactoryCar(CountryList.RUSSIA, factoryComponent);
         Camry camry = factoryCar.madeCamry(200, "Красный");
@@ -57,7 +58,9 @@ public class Test {
         hiance.moveInfo();
         System.out.print("солара ");
         solara.moveInfo();
-
+       } catch ( CountyFactoryNotEqualException e ){
+           System.out.println(e.getMsg());
+       }
 
     }
 

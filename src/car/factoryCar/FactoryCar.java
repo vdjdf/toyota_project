@@ -15,11 +15,11 @@ public class FactoryCar {
     private FactoryComponent factoryComponent;
 
 
-    public FactoryCar(CountryList countryList, FactoryComponent factoryComponent) {
+    public FactoryCar(CountryList countryList, FactoryComponent factoryComponent) throws CountyFactoryNotEqualException {
         this.factoryComponent = factoryComponent;
         this.countryList = countryList;
         if (!(countryList == factoryComponent.getCountryList())) {
-            throw new RuntimeException("Страны не совпадают:" + " Страна производства деталей: " +
+            throw new CountyFactoryNotEqualException ("Страны не совпадают:" + " Страна производства деталей: " +
                     factoryComponent.getCountryList() + " Страна производства машин: " + countryList);
         }
     }
