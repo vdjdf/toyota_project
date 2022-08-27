@@ -24,7 +24,7 @@ public class FactoryCar {
         }
     }
 
-    public Camry madeCamry(int price, String color) {
+    public Camry madeCamry(double price, String color) {
 
         return new Camry(price, Transmission.ROBOT, color, 220, factoryComponent.madeElectrics(),
                 factoryComponent.madeGasTank(), factoryComponent.madeHeadlights(), factoryComponent.madeMotor(),
@@ -33,7 +33,7 @@ public class FactoryCar {
     }
 
 
-    public Dyna madeDyna(int price, String color) {
+    public Dyna madeDyna(double price, String color) {
 
         return new Dyna(price, Transmission.MECHANICS, color, 200, factoryComponent.madeElectrics(),
                 factoryComponent.madeGasTank(), factoryComponent.madeHeadlights(), factoryComponent.madeMotor(),
@@ -41,7 +41,7 @@ public class FactoryCar {
                 WheelRadius.R20);
     }
 
-    public Hiance madeHiance(int price, String color) {
+    public Hiance madeHiance(double price, String color) {
 
         return new Hiance(price, Transmission.MECHANICS, color, 200, factoryComponent.madeElectrics(),
                 factoryComponent.madeGasTank(), factoryComponent.madeHeadlights(), factoryComponent.madeMotor(),
@@ -49,7 +49,7 @@ public class FactoryCar {
                 WheelRadius.R20);
     }
 
-    public Solara madeSolara(int price, String color) {
+    public Solara madeSolara(double price, String color) {
 
         return new Solara(price, Transmission.ROBOT, color, 220, factoryComponent.madeElectrics(),
                 factoryComponent.madeGasTank(), factoryComponent.madeHeadlights(), factoryComponent.madeMotor(),
