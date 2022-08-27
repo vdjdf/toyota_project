@@ -1,6 +1,5 @@
 package car;
 
-import car.component.*;
 import car.factoryCar.CountryList;
 import car.factoryCar.CountyFactoryNotEqualException;
 import car.factoryCar.FactoryCar;
@@ -13,7 +12,7 @@ import car.model.Solara;
 public class Test {
     public static void main(String[] args)  {
        try {
-        FactoryComponent factoryComponent = new FactoryComponent(CountryList.TURKEY);
+        FactoryComponent factoryComponent = new FactoryComponent(CountryList.RUSSIA);
         FactoryComponent factoryComponent2 = new FactoryComponent(CountryList.TURKEY);
         FactoryCar factoryCar = new FactoryCar(CountryList.RUSSIA, factoryComponent);
         Camry camry = factoryCar.madeCamry(200, "Красный");
@@ -26,8 +25,8 @@ public class Test {
         solara.getMiniFridge().coolDrink();
 
         //заправка только двух машин и тест движения
-        camry.setGasTank(50);
-        dyna.setGasTank(40);
+        camry.refill(50);
+        dyna.refill(40);
 
         try {
             camry.moveOn();
