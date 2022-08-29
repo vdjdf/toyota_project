@@ -37,7 +37,9 @@ public class FactoryCar {
                 factoryComponent.madeWheels(WheelRadius.R17),
                 factoryComponent.madeUsb(),
                 factoryComponent.madeCruiseControl(),
-                WheelRadius.R17);
+                WheelRadius.R17,
+                this.countryList);
+
     }
 
     public Dyna madeDyna(double price, String color) {
@@ -53,7 +55,8 @@ public class FactoryCar {
                 factoryComponent.madeWheels(WheelRadius.R20),
                 200,
                 factoryComponent.madePowerSocket(),
-                WheelRadius.R20);
+                WheelRadius.R20,
+                this.countryList);
     }
 
     public Hiance madeHiance(double price, String color) {
@@ -67,7 +70,8 @@ public class FactoryCar {
                 factoryComponent.madeWheels(WheelRadius.R20),
                 200,
                 factoryComponent.madeSpareWheel(),
-                WheelRadius.R20);
+                WheelRadius.R20,
+                this.countryList);
     }
 
     public Solara madeSolara(double price, String color) {
@@ -83,7 +87,8 @@ public class FactoryCar {
                 factoryComponent.madeWheels(WheelRadius.R16),
                 factoryComponent.madeConvertibleRoof(),
                 factoryComponent.madeMiniFridge(),
-                WheelRadius.R16);
+                WheelRadius.R16,
+                this.countryList);
     }
 
 }

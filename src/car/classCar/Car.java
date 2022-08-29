@@ -3,10 +3,12 @@ package car.classCar;
 import car.StartCarException;
 import car.component.*;
 import car.component.Transmission;
+import car.factoryCar.CountryList;
 
 import static car.component.Wheel.chekWheels;
 
 public abstract class Car {
+
     private double price;
     private String color;
     private int maxSpeed;
@@ -18,10 +20,12 @@ public abstract class Car {
     private Motor motor;
     private Wheel[] wheels;
     private WheelRadius wheelRadius;
+    private CountryList countryList;
 
 
     public Car(double price, Transmission transmission, String color, int maxSpeed, Electrics electrics,
-               GasTank gasTank, Headlights headlights, Motor motor, Wheel[] wheels, WheelRadius wheelRadius) {
+               GasTank gasTank, Headlights headlights, Motor motor, Wheel[] wheels, WheelRadius wheelRadius,
+               CountryList countryList) {
         this.price = price;
         this.color = color;
         this.maxSpeed = maxSpeed;
@@ -32,6 +36,7 @@ public abstract class Car {
         this.motor = motor;
         this.wheels = wheels;
         this.wheelRadius = wheelRadius;
+        this.countryList = countryList;
         for (Wheel wheel : wheels) {
             if (wheel.getWheelRadius() != wheelRadius) {
                 throw new RuntimeException("Радиус передаваемых колес должен быть " + wheel.getWheelRadius());
