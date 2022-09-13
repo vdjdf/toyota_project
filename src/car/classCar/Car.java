@@ -124,4 +124,7 @@ public abstract class Car {
         System.out.println("Бензина в баке: " + gasTank.getLiterGasoline());
     }
 
+    public double getPrice() {
+        return price;
+    }
 }
