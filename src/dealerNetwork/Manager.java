@@ -29,30 +29,29 @@ public class Manager {
     public Car saleCar(Buyer buyer) throws CustomerHasNoMoneyException {
         Car car = null;
         if (buyer.getMoney() >= ModelPrice.DYNA.getPrice()) {
-          //  repost.setNumberSoldDyna(repost.getNumberSoldDyna() + 1);
-            try {
 
+            try {
                 car = warehouseVer4.getDyna();
 
             } catch (CarNotExistException e) {
                 car = factoryCar.madeDyna(ModelPrice.DYNA.getPrice(), "black");
             }
         } else if (buyer.getMoney() >= ModelPrice.HIANCE.getPrice()) {
-         //   repost.setNumberSoldHiance(repost.getNumberSoldHiance() + 1);
+
             try {
                 car = warehouseVer4.getHiance();
             } catch (CarNotExistException e) {
                 car = factoryCar.madeHiance(ModelPrice.HIANCE.getPrice(), "black");
             }
         } else if (buyer.getMoney() >= ModelPrice.SOLARA.getPrice()) {
-           // repost.setNumberSoldSolara(repost.getNumberSoldSolara() + 1);
+
             try {
                 car = warehouseVer4.getSolara();
             } catch (CarNotExistException e) {
                 car = factoryCar.madeSolara(ModelPrice.SOLARA.getPrice(), "black");
             }
         } else if (buyer.getMoney() >= ModelPrice.CAMRY.getPrice()) {
-           // repost.setNumberSoldCamry(repost.getNumberSoldCamry() + 1);
+
             try {
                 car = warehouseVer4.getCamry();
             } catch (CarNotExistException e) {
